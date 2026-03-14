@@ -1,38 +1,72 @@
-Role Name
-=========
+# Ansible Role: NFS Server
 
-A brief description of the role goes here.
+Automates the installation and configuration of an NFS server.
 
-Requirements
-------------
+---
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## 📌 Overview
 
-Role Variables
---------------
+The **nfs_server** role configures a Linux host to act as a Network File System (NFS) server, enabling shared storage across multiple machines in a network.
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+---
 
-Dependencies
-------------
+## 🚀 Features
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+* NFS server installation
+* Export configuration
+* Shared storage automation
+* Infrastructure-ready configuration
 
-Example Playbook
-----------------
+---
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## 🧰 Requirements
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+* Ansible >= 2.9
+* Linux server supporting NFS
 
-License
--------
+---
 
-BSD
+## ⚙️ Role Variables
 
-Author Information
-------------------
+Example configuration:
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+```yaml
+nfs_export_dir: /srv/nfs
+nfs_allowed_hosts: "*"
+```
+
+---
+
+## ▶️ Example Playbook
+
+```yaml
+- hosts: nfs_servers
+  become: true
+  roles:
+    - gustavoohrodrigues.nfs_server
+```
+
+---
+
+## 📦 Installation
+
+```bash
+ansible-galaxy install gustavoohrodrigues.nfs_server
+```
+
+---
+
+## Author
+
+**Gustavo Henrique Rodrigues**
+
+SysAdmin
+
+LinkedIn
+https://www.linkedin.com/in/gustavo-henrique-rodrigues-3070a5260
+
+---
+
+## 📜 License
+
+MIT
